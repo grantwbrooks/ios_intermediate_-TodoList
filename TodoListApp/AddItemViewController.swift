@@ -8,8 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AddItemViewController: UIViewController {
 
+    
+    weak var delegate: AddItemDelegate?
+    
+    @IBOutlet weak var TitleLabel: UITextField!
+    @IBOutlet weak var BodyLabel: UITextView!
+    @IBOutlet weak var DateLabel: UIDatePicker!
+    
+    @IBAction func addItemPressed(_ sender: UIButton) {
+        delegate?.addItem(title: TitleLabel.text!, body: BodyLabel.text!, date: DateLabel.date, done: false)
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
