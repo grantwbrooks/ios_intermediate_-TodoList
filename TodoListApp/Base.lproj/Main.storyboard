@@ -31,22 +31,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="OKI-OY-MDP">
-                                <rect key="frame" x="0.0" y="288" width="375" height="216"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="KCa-11-dlM"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="527053228.98910898">
-                                    <!--2017-09-14 03:40:28 +0000-->
-                                </date>
-                            </datePicker>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dHH-Bc-ttl">
-                                <rect key="frame" x="16" y="96" width="343" height="184"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dHH-Bc-ttl">
+                                <rect key="frame" x="16" y="96" width="343" height="113"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFE-xZ-bES">
-                                <rect key="frame" x="16" y="532" width="343" height="67"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFE-xZ-bES">
+                                <rect key="frame" x="16" y="457" width="343" height="67"/>
                                 <color key="backgroundColor" red="0.040427606179999999" green="0.081108454250000003" blue="0.36498137949999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="BWF-ce-4aV"/>
@@ -59,6 +50,18 @@
                                     <action selector="addItemPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5PF-DH-nWT"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="OKI-OY-MDP">
+                                <rect key="frame" x="0.0" y="281" width="375" height="148"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="KCa-11-dlM"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="527053228.98910898">
+                                    <!--2017-09-14 03:40:28 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="touchedDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="EEF-qf-5Vd"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -87,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2390" y="137"/>
+            <point key="canvasLocation" x="2389.5999999999999" y="136.28185907046478"/>
         </scene>
         <!--List Table View Controller-->
         <scene sceneID="CyZ-dz-fnF">
@@ -102,7 +105,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y5g-fg-bnH" id="zR2-sY-9FO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccd-cg-DyK">

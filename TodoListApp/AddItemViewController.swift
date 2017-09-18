@@ -10,6 +10,9 @@ import UIKit
 
 class AddItemViewController: UIViewController {
 
+    @IBAction func touchedDate(_ sender: UIDatePicker) {
+        view.endEditing(true)
+    }
     
     weak var delegate: AddItemDelegate?
     
@@ -26,6 +29,7 @@ class AddItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,5 +38,20 @@ class AddItemViewController: UIViewController {
     }
 
 
+}
+
+extension UIViewController {
+    // be sure to put this function in every viewController viewDidLoad if you want taps outside UIObject to close keyboard
+    // on this one I also added a endEditing to the date picker so if you change values on that it closes keyboard.
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.  this can interfere with didSelectRowAtIndexPath so add below line to stop interference.
+        //tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
